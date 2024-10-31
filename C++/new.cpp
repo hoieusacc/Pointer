@@ -7,13 +7,16 @@ using namespace std;
 int main(){
     string date;
     cin >> date;
-    string day, month, year;
-    stringstream ss(date);
 
-    getline(ss, day, "/");
-    int month = date[3] + date[4];
-    int year = date[6] + date[7] + date[8] + date[9];
-    cout << day;
+    stringstream ss(date);
+    string dayStr, monthStr, yearStr;
+    getline(ss, dayStr, '/');
+    getline(ss, monthStr, '/');
+    getline(ss, yearStr);
+
+    int day = stoi(dayStr);
+    int month = stoi(monthStr);
+    int year = stoi(yearStr);
     
     if (year >= 1 && year <= 2024){
         if (month >= 1 && month <= 12){
